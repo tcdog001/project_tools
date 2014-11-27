@@ -12,7 +12,7 @@ git_clone_ap() {
 	git clone 192.168.15.112:/home/git/LTEFI_HISISDK/trunk_project.git trunk_project
 }
 
-git_clone_ptest() {
+git_clone_md_ptest() {
 	 git clone 192.168.15.112:/home/git/LTEFI_HISISDK/ptest.git ptest
 }
 

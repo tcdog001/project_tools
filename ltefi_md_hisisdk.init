@@ -1,5 +1,6 @@
 #!/bin/bash
 
+. ltefi_md_git.in
 readonly HISISDK=hisisdk
 
 main() {
