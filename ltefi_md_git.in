@@ -1,0 +1,29 @@
+#!/bin/bash
+
+git_clone_md() {
+	git clone 192.168.15.112:/home/git/LTEFI_HISISDK/autelan_scripts.git autelan_scripts
+	git clone 192.168.15.112:/home/git/LTEFI_HISISDK/share.git share	
+	git clone 192.168.15.112:/home/git/LTEFI_HISISDK/rootfs_data.git rootfs_data
+	git clone 192.168.15.112:/home/git/LTEFI_HISISDK/sdk_changes.git sdk_changes
+	git clone 192.168.15.112:/home/git/LTEFI_HISISDK/histb.git histb
+}
+
+git_clone_ap() {
+	git clone 192.168.15.112:/home/git/LTEFI_HISISDK/trunk_project.git trunk_project
+}
+
+git_clone_ptest() {
+	 git clone 192.168.15.112:/home/git/LTEFI_HISISDK/ptest.git ptest
+}
+
+git_clone_md_release() {
+	git clone 192.168.15.112:/home/git/LTEFI_HISISDK/release.git release
+}
+
+git_clone_md_custom() {
+	git clone 192.168.15.112:/home/git/LTEFI_HISISDK/custom.git custom
+}
+
+git_clone_md_package() {
+	git clone 192.168.15.112:/home/git/LTEFI_HISISDK/autelan.git autelan
+}

@@ -1,0 +1,31 @@
+#!/bin/bash
+
+readonly HISISDK=hisisdk
+
+main() {
+	local user=$(whoami)
+	local PRO_PATH=/home/${user}/histb
+
+	if [ ${user} != ${HISISDK} ]; then
+		echo "warning: user!=${HISISDK}, exit!"
+		exit 0
+	fi
+
+	if [ -f "${PRO_PATH}/autelan" ]; then
+		echo "warning: ${PRO_PATH}/autelan exist, exit!"
+		exit 0
+	fi
+
+	mkdir -p ${PRO_PATH}
+
+	pushd ${PRO_PATH}
+	echo "#### PROJECT PATH: $(pwd) ####"
+	git_clone_md_package
+	cd autelan
+	git_clone_md_release
+	git_clone_md_custom
+	git_clone_md_ptest
+	popd
+}
+
+main

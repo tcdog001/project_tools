@@ -1,5 +1,7 @@
 #!/bin/bash
 
+. ltefi_md_git.in
+
 main() {
 	local PRO_PATH="histb_project_$(date | awk -F ' ' '{print $2$3}')"
 
@@ -7,17 +9,13 @@ main() {
 	pushd ../${PRO_PATH}
 	echo "#### PROJECT PATH: $(pwd) ####"
 
-	git clone 192.168.15.112:/home/git/LTEFI_HISISDK/custom.git custom
-	git clone 192.168.15.112:/home/git/LTEFI_HISISDK/autelan_scripts.git autelan_scripts
-	git clone 192.168.15.112:/home/git/LTEFI_HISISDK/share.git share	
-	git clone 192.168.15.112:/home/git/LTEFI_HISISDK/rootfs_data.git rootfs_data
-	git clone 192.168.15.112:/home/git/LTEFI_HISISDK/release.git release
-	git clone 192.168.15.112:/home/git/LTEFI_HISISDK/sdk_changes.git sdk_changes
-	git clone 192.168.15.112:/home/git/LTEFI_HISISDK/histb.git histb
-
-	git clone 192.168.15.112:/home/git/LTEFI_HISISDK/trunk_project.git
+	git_clone_md
+	git_clone_md_release
+	git_clone_md_custom
+	git_clone_ap
+		
 	popd
 	exit 0
 }
 
-main #@
+main
