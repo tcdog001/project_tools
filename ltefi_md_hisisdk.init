@@ -21,11 +21,11 @@ main() {
 
 	pushd ${PRO_PATH}
 	echo "#### PROJECT PATH: $(pwd) ####"
-	git_clone_md_package
+	git_clone_md_package ${user}
 	cd autelan
-	git_clone_md_release
-	git_clone_md_custom
-	git_clone_md_ptest
+	git_clone_md_release ${user}
+	git_clone_md_custom ${user}
+	git_clone_md_ptest ${user}
 	popd
 }
 
