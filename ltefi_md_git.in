@@ -1,29 +1,64 @@
 #!/bin/bash
 
+hisi_git_string="git clone"
+hisi_git_ip="192.168.15.112"
+hisi_git_user=""
+
+#
+# $1: user
+#
+check_user() {
+	local user=$1
+	
+	if [[ "${user}" = "hisisdk" || "${user}" = "liuhuijun" ]]; then
+		hisi_git_user="git@"
+	fi
+}
+
+#
+# "$@": git path
+#
+hisi_git_clone() {
+	local git_path="$@"
+	#echo "${hisi_git_string} ${hisi_git_user}${hisi_git_ip}:${git_path}"
+	${hisi_git_string} ${hisi_git_user}${hisi_git_ip}:${git_path}
+}
+
+#
+# $1: user
+#
 git_clone_md() {
-	git clone git@192.168.15.112:/home/git/LTEFI_HISISDK/autelan_scripts.git autelan_scripts
-	git clone git@192.168.15.112:/home/git/LTEFI_HISISDK/share.git share	
-	git clone git@192.168.15.112:/home/git/LTEFI_HISISDK/rootfs_data.git rootfs_data
-	git clone git@192.168.15.112:/home/git/LTEFI_HISISDK/sdk_changes.git sdk_changes
-	git clone git@192.168.15.112:/home/git/LTEFI_HISISDK/histb.git histb
+	check_user "$@"
+
+	hisi_git_clone "/home/git/LTEFI_HISISDK/autelan_scripts.git autelan_scripts"
+	hisi_git_clone "/home/git/LTEFI_HISISDK/rootfs_data.git rootfs_data"
+	hisi_git_clone "/home/git/LTEFI_HISISDK/sdk_changes.git sdk_changes"
+	hisi_git_clone "/home/git/LTEFI_HISISDK/website.git website"
+	hisi_git_clone "/home/git/LTEFI_HISISDK/histb.git histb"
+	#hisi_git_clone "/home/git/LTEFI_HISISDK/share.git share"
 }
 
 git_clone_ap() {
-	git clone git@192.168.15.112:/home/git/LTEFI_HISISDK/trunk_project.git trunk_project
+	check_user "$@"
+	hisi_git_clone "/home/git/LTEFI_HISISDK/trunk_project.git trunk_project"
 }
 
 git_clone_md_ptest() {
-	 git clone git@192.168.15.112:/home/git/LTEFI_HISISDK/ptest.git ptest
+	check_user "$@"
+	hisi_git_clone "/home/git/LTEFI_HISISDK/ptest.git ptest"
 }
 
 git_clone_md_release() {
-	git clone git@192.168.15.112:/home/git/LTEFI_HISISDK/release.git release
+	check_user "$@"
+	hisi_git_clone "/home/git/LTEFI_HISISDK/release.git release"
 }
 
 git_clone_md_custom() {
-	git clone git@192.168.15.112:/home/git/LTEFI_HISISDK/custom.git custom
+	check_user "$@"
+	hisi_git_clone "/home/git/LTEFI_HISISDK/custom.git custom"
 }
 
 git_clone_md_package() {
-	git clone git@192.168.15.112:/home/git/LTEFI_HISISDK/autelan.git autelan
+	check_user "$@"
+	hisi_git_clone "/home/git/LTEFI_HISISDK/autelan.git autelan"
 }
