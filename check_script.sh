@@ -4,15 +4,17 @@
 # add extern git command
 #
 do_extern_git() {
+	git branch --set-upstream  master  origin/master
+	git branch --set-upstream  zjhn  origin/zjhn
+	
 	# about zjhn	
 	git checkout zjhn
-	git pull origin zjhn
 	
 	# about master
-	# git checkout master
-	# git pull
+	#git checkout master
         
 	#git branch -v
+	git pull
 }
 
 do_normal_git() {
