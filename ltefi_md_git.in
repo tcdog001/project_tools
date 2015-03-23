@@ -26,8 +26,20 @@ hisi_git_clone() {
 	${git_string}
 }
 
+git_clone_ap() {
+	hisi_git_clone "trunk_project.git trunk_project"
+}
+
+git_clone_md_release() {
+	hisi_git_clone "release.git release"
+}
+
+git_clone_md_package() {
+	hisi_git_clone "autelan.git autelan"
+}
+
 #
-# $1: user
+# for lte
 #
 git_clone_md() {
 	hisi_git_clone "autelan_scripts.git autelan_scripts"
@@ -38,22 +50,31 @@ git_clone_md() {
 	#hisi_git_clone "share.git share"
 }
 
-git_clone_ap() {
-	hisi_git_clone "trunk_project.git trunk_project"
-}
-
 git_clone_md_ptest() {
 	hisi_git_clone "ptest.git ptest"
-}
-
-git_clone_md_release() {
-	hisi_git_clone "release.git release"
 }
 
 git_clone_md_custom() {
 	hisi_git_clone "custom.git custom"
 }
 
-git_clone_md_package() {
-	hisi_git_clone "autelan.git autelan"
+#
+# for lte_v2
+#
+git_clone_md_v2() {
+        hisi_git_clone "autelan_scripts_v2.git autelan_scripts_v2"
+        hisi_git_clone "rootfs_data.git rootfs_data"
+        hisi_git_clone "sdk_changes_v2.git sdk_changes_v2"
+        hisi_git_clone "website.git website"
+        hisi_git_clone "histb.git histb"
+        #hisi_git_clone "share.git share"
 }
+
+git_clone_md_ptest_v2() {
+        hisi_git_clone "ptest_v2.git ptest_v2"
+}
+
+git_clone_md_custom_v2() {
+        hisi_git_clone "custom_v2.git custom_v2"
+}
+
