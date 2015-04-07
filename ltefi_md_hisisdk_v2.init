@@ -23,7 +23,7 @@ main() {
 	echo "#### PROJECT PATH: $(pwd) ####"
 	git_clone_md_package ${user}
 	cd autelan
-	git_clone_md_release ${user}
+	git_clone_md_release_v2 ${user}
 	git_clone_md_custom_v2 ${user}
 	git_clone_md_ptest_v2 ${user}
 	popd

@@ -14,9 +14,9 @@ main() {
 
 
 	git_clone_md_v2 ${user}
-	git_clone_md_release ${user}
+	git_clone_md_release_v2 ${user}
 	git_clone_md_custom_v2 ${user}
-	git_clone_ap ${user}
+	git_clone_ap_v2 ${user}
 	
 	popd
 	exit 0

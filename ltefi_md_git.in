@@ -61,6 +61,10 @@ git_clone_md_custom() {
 #
 # for lte_v2
 #
+git_clone_ap_v2() {
+	hisi_git_clone "trunk_project_v2.git trunk_project"
+}
+
 git_clone_md_v2() {
         hisi_git_clone "autelan_scripts_v2.git autelan_scripts_v2"
         hisi_git_clone "rootfs_data.git rootfs_data"
@@ -68,6 +72,10 @@ git_clone_md_v2() {
         hisi_git_clone "website.git website"
         hisi_git_clone "histb.git histb"
         #hisi_git_clone "share.git share"
+}
+
+git_clone_md_release_v2() {
+	hisi_git_clone "release_v2.git release_v2"
 }
 
 git_clone_md_ptest_v2() {
