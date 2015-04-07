@@ -3,7 +3,7 @@
 . ltefi_md_git.in
 
 main() {
-	local PRO_PATH="histb_v2_project_$(date | awk -F ' ' '{print $2$3}')"
+	local PRO_PATH="histb_project_v2_$(date | awk -F ' ' '{print $2$3}')"
 	local user=$(whoami)
 
 	mkdir -p ../${PRO_PATH}

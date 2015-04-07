@@ -62,7 +62,7 @@ git_clone_md_custom() {
 # for lte_v2
 #
 git_clone_ap_v2() {
-	hisi_git_clone "trunk_project_v2.git trunk_project"
+	hisi_git_clone "ap_project_v2.git ap_project_v2"
 }
 
 git_clone_md_v2() {
