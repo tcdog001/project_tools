@@ -5,7 +5,7 @@ readonly HISISDK=hisisdk
 
 main() {
 	local user=$(whoami)
-	local PRO_PATH=/home/${user}/histb
+	local PRO_PATH=/home/${user}/histb_v2
 
 	if [ ${user} != ${HISISDK} ]; then
 		echo "warning: user!=${HISISDK}, exit!"
@@ -21,7 +21,7 @@ main() {
 
 	pushd ${PRO_PATH}
 	echo "#### PROJECT PATH: $(pwd) ####"
-	git_clone_md_package ${user}
+	git_clone_md_package_v2 ${user}
 	cd autelan
 	git_clone_md_release_v2 ${user}
 	git_clone_md_custom_v2 ${user}

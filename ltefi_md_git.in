@@ -61,6 +61,10 @@ git_clone_md_custom() {
 #
 # for lte_v2
 #
+git_clone_md_package_v2() {
+	hisi_git_clone "autelan_v2.git autelan_v2"
+}
+
 git_clone_ap_v2() {
 	hisi_git_clone "ap_project_v2.git ap_project_v2"
 }
