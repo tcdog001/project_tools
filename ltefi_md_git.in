@@ -90,3 +90,6 @@ git_clone_md_custom_v2() {
         hisi_git_clone "custom_v2.git custom"
 }
 
+git_clone_md_autelan_scripts_v2() {
+	hisi_git_clone "autelan_scripts_v2.git autelan_scripts"
+}

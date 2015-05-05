@@ -26,6 +26,7 @@ main() {
 	git_clone_md_release_v2 ${user}
 	git_clone_md_custom_v2 ${user}
 	git_clone_md_ptest_v2 ${user}
+	git_clone_md_autelan_scripts_v2 ${user}
 	popd
 }
 
