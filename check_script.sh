@@ -6,18 +6,15 @@
 #
 do_extern_git() {
 	local doc=$1
-	git branch --set-upstream  master  origin/master
-	git branch --set-upstream  zjhn  origin/zjhn
 	
-	if [ "${doc}" != "website" ]; then
-	# about zjhn	
-	git checkout zjhn
-	
-	# about master
-	#git checkout master
-	else
+	if [[ "${doc}" = "website" || "${doc}" = "capp" ]]; then
 		# when doc is website
 		git checkout master
+	else
+		# about zjhn	
+		git branch --set-upstream  master  origin/master
+		git branch --set-upstream  zjhn  origin/zjhn
+		git checkout zjhn
         fi
         
 	#git branch -v
