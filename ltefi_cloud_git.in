@@ -1,0 +1,65 @@
+#!/bin/bash
+
+hisi_git_string="git clone"
+hisi_git_ip="192.168.15.112"
+hisi_git_user="git@"
+
+#
+# $1: user
+#
+check_user() {
+	local user=$1
+	
+	if [[ "${user}" = "hisisdk" || "${user}" = "liuhuijun" ]]; then
+		hisi_git_user="git@"
+	fi
+}
+
+#
+# "$@": git path
+#
+hisi_git_clone() {
+	local git_path="$@"
+	local git_string="${hisi_git_string} ${hisi_git_user}${hisi_git_ip}:${git_path}"
+
+	echo "${git_string}"
+	${git_string}
+}
+
+#
+# for cloud_base
+#
+git_clone_cloud_base() {
+	hisi_git_clone "asdf.git asdf"
+	hisi_git_clone "radgo.git radgo"
+	hisi_git_clone "sms.git sms"
+	hisi_git_clone "ums.git ums"
+	hisi_git_clone "cloud_scripts scripts"
+}
+
+#
+# $1: url, $2: commit, $3: path
+#
+git_clone_party_interface() {
+	local url="$1"
+	local commit="$2"
+	local path="$3"
+	
+	git clone ${url} ${path}
+	cd ${path}
+	git reset ${commit}
+	cd -
+}
+
+git_clone_beego() {
+	local url="https://github.com/astaxie/beego"
+	local commit="a89f14d80dab442927bdc11d641aa1250ab8ad71"
+	local path=github.com/astaxie/beego
+
+	git_clone_party_interface "${url}" "${commit}" "${path}"
+}
+
+git_clone_cloud_party() {
+	git_clone_beego
+}
+
