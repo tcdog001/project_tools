@@ -6,8 +6,8 @@ main() {
 	local user=$(whoami)
 	if [[ "$(uname)" == "Linux" ]]; then
 		PRO_PATH=/home/${user}/project/gopath/src
-	elif [[ -f "../gopath.txt" ]]; then
-		PRO_PATH=$(cat ../gopath.txt)/src
+	elif [[ -f "./gopath.txt" ]]; then
+		PRO_PATH=$(cat ./gopath.txt)
 	else
 		PRO_PATH=../src
 	fi
