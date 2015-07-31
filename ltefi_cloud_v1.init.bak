@@ -9,7 +9,7 @@ main() {
 	elif [[ -f "./gopath.txt" ]]; then
 		PRO_PATH=$(cat ./gopath.txt)
 	else
-		PRO_PATH=../src
+		PRO_PATH=../
 	fi
 	
 	mkdir -p ${PRO_PATH}

@@ -59,7 +59,16 @@ git_clone_beego() {
 	git_clone_party_interface "${url}" "${commit}" "${path}"
 }
 
+git_clone_mysql() {
+	local url="https://github.com/go-sql-driver/mysql"
+	local commit="fb7299726d2e68745a8805b14f2ff44b5c2cfa84"
+	local path=github.com/go-sql-driver/mysql
+
+	git_clone_party_interface "${url}" "${commit}" "${path}"
+}
+
 git_clone_cloud_party() {
 	git_clone_beego
+	git_clone_mysql
 }
 
