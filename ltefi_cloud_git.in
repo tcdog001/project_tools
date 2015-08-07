@@ -67,6 +67,14 @@ git_clone_mysql() {
 	git_clone_party_interface "${url}" "${commit}" "${path}"
 }
 
+git_clone_redigo() {
+	local url="https://github.com/garyburd/redigo"
+	local commit="3e4727f0ef5938d3a846cdb57e560dba4419e854"
+	local path=github.com/garyburd/redigo
+
+	git_clone_party_interface "${url}" "${commit}" "${path}"
+}
+
 git_clone_cloud_party() {
 	git_clone_beego
 	git_clone_mysql
