@@ -75,8 +75,18 @@ git_clone_redigo() {
 	git_clone_party_interface "${url}" "${commit}" "${path}"
 }
 
+git_clone_qqwry() {
+	local url="https://github.com/kayon/qqwry"
+	local commit="25a636fe1f6e097933189d8b9de14ee4ca1c62a3"
+	local path=github.com/kayon/qqwry
+
+	git_clone_party_interface "${url}" "${commit}" "${path}"
+}
+
 git_clone_cloud_party() {
 	git_clone_beego
 	git_clone_mysql
+	git_clone_redigo
+	git_clone_qqwry
 }
 
