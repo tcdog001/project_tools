@@ -16,6 +16,7 @@ main() {
 	git_clone_md ${user}
 	git_clone_md_release ${user}
 	git_clone_md_custom ${user}
+	git_clone_md_capp ${user}
 	git_clone_ap ${user}
 
 	git clone https://github.com/smallcapp/capp

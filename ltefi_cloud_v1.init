@@ -1,0 +1,26 @@
+#!/bin/bash
+
+. ltefi_cloud_git.in
+
+main() {
+	local user=$(whoami)
+	if [[ "$(uname)" == "Linux" ]]; then
+		PRO_PATH=/home/${user}/project/gopath/src
+	elif [[ -f "../gopath.txt" ]]; then
+		PRO_PATH=$(cat ../gopath.txt)/src
+	else
+		PRO_PATH=../src
+	fi
+	
+	mkdir -p ${PRO_PATH}
+	pushd ${PRO_PATH}
+	echo "#### PROJECT PATH: $(pwd) ####"
+
+
+	git_clone_cloud_base ${user}
+	git_clone_cloud_party ${user}
+	popd
+	exit 0
+}
+
+main
