@@ -18,6 +18,7 @@ main() {
 	git_clone_md_custom ${user}
 	git_clone_ap ${user}
 
+	git clone https://github.com/smallcapp/capp
 	popd
 	exit 0
 }
