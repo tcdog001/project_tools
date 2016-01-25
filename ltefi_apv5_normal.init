@@ -1,0 +1,23 @@
+#!/bin/bash
+
+. ltefi_md_git.in
+
+main() {
+	local PRO_PATH="apv5_project_$(date | awk -F ' ' '{print $2$3}')"
+	local user=$(whoami)
+
+	mkdir -p ../${PRO_PATH}
+	cp list.in ../${PRO_PATH}/list.in
+	cp check_script.sh ../${PRO_PATH}/
+	pushd ../${PRO_PATH}
+	echo "#### PROJECT PATH: $(pwd) ####"
+
+	git_clone_ap ${user}
+	git clone git@192.168.15.112:autelan_scripts_probe.git
+	git clone git@192.168.15.112:sdk_changes_apv5.git
+	
+	popd
+	exit 0
+}
+
+main
