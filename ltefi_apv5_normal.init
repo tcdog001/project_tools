@@ -15,7 +15,8 @@ main() {
 	git_clone_ap ${user}
 	git clone git@192.168.15.112:autelan_scripts_probe.git
 	git clone git@192.168.15.112:sdk_changes_apv5.git
-	
+	git clone https://github.com/smallcapp/capp
+
 	popd
 	exit 0
 }
